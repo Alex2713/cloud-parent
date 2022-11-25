@@ -17,4 +17,11 @@
         <module>cloud-service-impl-simple</module>
     </modules>
 
+    <dependencies>
+        <!-- bootstrap 启动器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -1,0 +1,52 @@
+# Tomcat
+server:
+  port: 9701
+  servlet:
+    encoding:
+      charset: utf-8
+    context-path: /
+  tomcat:
+    ### tomcat的URI编码
+    uri-encoding: UTF-8
+    threads:
+      ### tomcat最大线程数，默认为200
+      max: 800
+      ### Tomcat启动初始化的线程数，默认值10
+      min-spare: 30
+
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: simple-service
+  profiles:
+    # 环境配置
+    active: dev
+  data:
+    redis:
+      database: 6
+      host: 139.224.55.226
+      port: 6379
+      password: Alex-2713-passwd
+      timeout: 10000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://139.224.55.226:3306/simple-service
+    username: HuWeilong
+    password: Alex-2713-passwd
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 初始化大小、最小、最大连接数
+      initial-size: 3
+      min-idle: 3
+      max-active: 10
+      # 配置获取连接等待超时的时间
+      max-wait: 6000
+      stat-view-servlet:
+        login-username: admin
+        login-password: admin
+      filter:
+        stat:
+          # 配置 StatFilter
+          log-slow-sql: true
+          slow-sql-millis: 2000
